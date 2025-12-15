@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>MasChoi – AI Trainer & Evaluator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+:root {
+ --bg: #050714;
+ --bg-alt: #0b0f23;
+ --primary: #4df0ff;
+ --accent: #9b6bff;
+ --text: #f5f7ff;
+ --muted: #9aa0c6;
+ --border: rgba(255, 255, 255, 0.08);
+ --radius: 14px;
+ --shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+ background: radial-gradient(circle at top, #1b2440 0, #050714 55%);
+ color: var(--text);
+ line-height: 1.6;
+ min-height: 100vh;
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrapper { max-width: 1120px; margin: 0 auto; padding: 32px 20px 64px; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; }
+.logo { display:flex; align-items:center; gap:10px; }
+.logo-mark { width:32px; height:32px; border-radius:10px; background:radial-gradient(circle at 30% 0,var(--primary),var(--accent)); box-shadow:0 0 18px rgba(77,240,255,.6); display:flex; align-items:center; justify-content:center; font-weight:700; }
+.logo-text { font-weight:600; font-size:18px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+main { display:grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.9fr); gap:32px; }
+@media(max-width:880px){ main{grid-template-columns:1fr;} }
+.hero-card{ background:radial-gradient(circle at top left,#181f3a 0,#050714 56%); border-radius:28px; padding:28px 26px; border:1px solid rgba(115,131,255,.25); box-shadow:var(--shadow);} 
+.hero-badge{ display:inline-flex; padding:4px 10px; border-radius:999px; border:1px solid rgba(155,107,255,.5); background:rgba(4,8,35,.9); font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:16px; }
+.hero-title{ font-size:clamp(30px,4vw,36px); font-weight:700; margin-bottom:10px; }
+.hero-subtitle{ font-size:15px; color:var(--muted); max-width:520px; margin-bottom:18px; }
+.hero-meta{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+.hero-tag{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; padding:3px 9px; border-radius:999px; background:rgba(5,7,20,.9); border:1px solid var(--border); color:var(--muted);} 
+.section-stack{ display:flex; flex-direction:column; gap:18px; }
+.card{ background:radial-gradient(circle at top left,#111425 0,#050714 62%); border-radius:var(--radius); border:1px solid var(--border); padding:18px; }
+.card-header{ display:flex; justify-content:space-between; margin-bottom:10px; }
+.card-title{ font-size:14px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); }
+.card-pill{ font-size:11px; padding:3px 9px; border-radius:999px; background:rgba(5,7,20,.9); border:1px solid var(--border); color:var(--muted);} 
+.card-body{ font-size:13px; }
+ul.chips{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+.chip{ font-size:11px; padding:4px 10px; border-radius:999px; border:1px solid rgba(103,121,255,.6); background:rgba(6,9,28,.9); color:var(--muted);} 
+.timeline{ display:flex; flex-direction:column; gap:10px; }
+.timeline-item{ display:grid; grid-template-columns:auto 1fr; gap:10px; }
+.timeline-dot{ width:10px; height:10px; border-radius:50%; margin-top:5px; background:radial-gradient(circle,var(--accent),#050714); box-shadow:0 0 9px rgba(155,107,255,.9);} 
+.contact-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+.contact-pill{ padding:6px 10px; border-radius:999px; background:rgba(5,7,22,.9); border:1px solid var(--border); color:var(--muted);} 
+</style>
+</head>
+<body>
+<div class="wrapper">
+<header>
+<div class="logo"><div class="logo-mark">MC</div><div class="logo-text">MasChoi · AI</div></div>
+</header>
+<main>
+<section class="hero-card">
+<div class="hero-badge">Portfolio · AI Trainer & Evaluator</div>
+<h1 class="hero-title">Building fair, empathic, and context-aware AI.</h1>
+<p class="hero-subtitle">Early-stage AI Trainer & Evaluator with a <strong>Psychology</strong> background, focused on response quality, bias awareness, and human-centered evaluation.</p>
+<div class="hero-meta"><div class="hero-tag">Bias & Fairness</div><div class="hero-tag">Language Nuance</div><div class="hero-tag">Human Judgment</div></div>
+</section>
+<section class="section-stack">
+<!-- ================= STRATEGIC POSITIONING ================= -->
+<div class="card"><div class="card-header"><div class="card-title">Professional Focus</div><div class="card-pill">Positioning</div></div><div class="card-body"><p>I am positioning myself as an <strong>AI Trainer & Evaluator</strong> who brings structured human judgment into AI systems by combining psychological insight, ethical sensitivity, and consistent evaluation standards.</p><ul class="chips"><li class="chip">Human Judgment</li><li class="chip">Bias Awareness</li><li class="chip">Ethical Evaluation</li></ul></div></div>
+<div class="card"><div class="card-header"><div class="card-title">About & Professional Background</div><div class="card-pill">Profile</div></div><div class="card-body"><p>I am developing my career as an AI Trainer & Evaluator, applying behavioral psychology, empathy, and structured judgment to assess human–AI interactions.</p><p class="text-muted">My psychology background trains me to evaluate not only correctness, but also emotional impact, fairness, and contextual appropriateness in AI responses.</p></div></div>
+<div class="card"><div class="card-header"><div class="card-title">Education & Domain Background</div><div class="card-pill">Psychology</div></div><div class="card-body"><p><strong>Bachelor’s degree in Psychology</strong> with experience in HR, educational curriculum design, and counseling. This foundation strengthens my sensitivity to cognitive bias, ethical considerations, and response quality.</p></div></div>
+<div class="card"><div class="card-header"><div class="card-title">Why Psychology Matters in AI Evaluation</div><div class="card-pill">Expertise</div></div><div class="card-body"><p>Psychology enables me to identify bias patterns, evaluate emotional tone, and judge whether AI outputs truly support users in ethical and contextually appropriate ways.</p><ul class="chips"><li class="chip">Cognitive Bias Awareness</li><li class="chip">Human-Centered Evaluation</li><li class="chip">Ethical Sensitivity</li></ul></div></div>
+<div class="card"><div class="card-header"><div class="card-title">AI Response Evaluation Framework</div><div class="card-pill">Method</div></div><div class="card-body"><p>I apply a consistent evaluation framework focused on real human impact.</p><ul class="chips"><li class="chip">Clarity & Relevance</li><li class="chip">Bias & Fairness</li><li class="chip">Tone & Emotional Fit</li><li class="chip">Safety & Ethics</li></ul></div></div>
+<!-- ================= MINI CASE STUDIES ================= -->
+<div class="card"><div class="card-header"><div class="card-title">Mini Case Studies (Simulation)</div><div class="card-pill">Evidence</div></div><div class="card-body"><div class="timeline"><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Bias & Fairness Evaluation</strong><br/>Compared AI responses across gendered and professional prompts, identified inconsistent assumptions, and recommended neutralized phrasing.</div></div><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Emotional Tone Alignment</strong><br/>Reviewed AI replies in sensitive user scenarios to assess empathy, validation, and tone appropriateness.</div></div><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Safety & Boundary Review</strong><br/>Flagged responses that risked unsafe guidance and proposed safer alternatives.</div></div></div></div></div><div class="card-body"><div class="timeline"><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Bias Sensitivity Review</strong><br/>Identified implicit bias in AI responses toward social roles and proposed prompt adjustments.</div></div><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Empathy & Tone Calibration</strong><br/>Evaluated emotional alignment of AI responses in sensitive user scenarios.</div></div><div class="timeline-item"><div class="timeline-dot"></div><div><strong>Advanced Annotation</strong><br/>Manual labeling for relevance, safety, and response quality.</div></div></div></div></div>
+<!-- ================= CALL TO ACTION ================= -->
+<div class="card"><div class="card-header"><div class="card-title">Call to Action</div><div class="card-pill">Next Step</div></div><div class="card-body"><p>I am open to entry-level roles, pilot projects, and feedback-driven collaboration in AI training, evaluation, and data quality.</p><p class="text-muted">This portfolio demonstrates my evaluation mindset and simulated practice. I am eager to contribute and learn within real-world AI systems.</p></div></div>
+
+<div class="card"><div class="card-header"><div class="card-title">Contact & Professional Profile</div><div class="card-pill">Verified</div></div><div class="card-body"><p>Open to discussion, feedback, and early collaboration in AI training & evaluation.</p><div class="contact-row"><div class="contact-pill">✉ maschoi313@gmail.com</div><div class="contact-pill">⏱ GMT+7 · Indonesia</div></div><div style="margin-top:14px"><div class="badge-base LI-profile-badge" data-locale="in_ID" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="muhammad-nur-choiri-5b6626229" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/muhammad-nur-choiri-5b6626229?trk=profile-badge">Muhammad Nur Choiri</a></div></div></div></div>
+</section>
+</main>
+</div>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+</body>
+</html>
