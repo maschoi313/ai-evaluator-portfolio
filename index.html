@@ -45,29 +45,17 @@ header{
   margin-bottom:40px;
 }
 
-/* ===== LOGO (FINAL OPTIMAL) ===== */
+/* ===== LOGO TANPA FRAME ===== */
 .logo{
   display:flex;
   align-items:center;
   gap:14px;
 }
 
-.logo-mark{
-  width:52px;
-  height:52px;
-  border-radius:14px;
-  background:radial-gradient(circle at 30% 0,var(--primary),var(--accent));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  box-shadow:0 0 24px rgba(77,240,255,.65);
-}
-
-.logo-mark img{
-  width:88%;
-  height:88%;
-  object-fit:contain;
+.logo img{
+  width:56px;        /* ukuran desktop */
+  height:auto;
+  display:block;
 }
 
 .logo-text{
@@ -78,12 +66,10 @@ header{
   font-weight:600;
 }
 
-/* Mobile adjustment */
+/* Mobile */
 @media(max-width:600px){
-  .logo-mark{
-    width:44px;
-    height:44px;
-    border-radius:12px;
+  .logo img{
+    width:46px;
   }
 }
 
@@ -182,9 +168,7 @@ main{
 
 <header>
   <div class="logo">
-    <div class="logo-mark">
-      <img src="assets/logo-mas-choi.png" alt="Mas Choi Logo">
-    </div>
+    <img src="assets/logo-mas-choi.png" alt="Mas Choi Logo">
     <div class="logo-text">Mas Choi | AI Evaluator</div>
   </div>
 </header>
