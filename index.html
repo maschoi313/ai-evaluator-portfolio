@@ -10,60 +10,291 @@
 <meta property="og:title" content="Mas Choi | AI Trainer & Evaluator" />
 <meta property="og:description" content="AI Trainer & Evaluator with a Psychology background. Focused on bias, tone, fairness, and human-centered evaluation." />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="assets/logo-mas-choi.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
 
 <style>
-:root{--bg:#050714;--bg-alt:#0b0f23;--primary:#4df0ff;--accent:#9b6bff;--text:#f5f7ff;--muted:#9aa0c6;--border:rgba(255,255,255,.08);--radius:16px;--shadow:0 18px 45px rgba(0,0,0,.65)}
+:root{
+  --bg:#050714;
+  --bg-alt:#0b0f23;
+  --primary:#4df0ff;
+  --accent:#9b6bff;
+  --text:#f5f7ff;
+  --muted:#9aa0c6;
+  --border:rgba(255,255,255,.08);
+  --radius:16px;
+  --shadow:0 18px 45px rgba(0,0,0,.65)
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;background:radial-gradient(circle at top,#1b2440 0,#050714 55%);color:var(--text);line-height:1.65}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;
+  background:radial-gradient(circle at top,#1b2440 0,#050714 55%);
+  color:var(--text);
+  line-height:1.65
+}
 a{color:var(--primary);text-decoration:none}
 a:hover{text-decoration:underline}
+
 .wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:34px;height:34px;border-radius:10px;background:radial-gradient(circle at 30% 0,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 0 16px rgba(77,240,255,.6)}
-.logo-text{font-weight:600;letter-spacing:.12em;font-size:14px;text-transform:uppercase;color:var(--muted)}
-main{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
-@media(max-width:900px){main{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}}
-.hero{background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);border-radius:28px;padding:32px;border:1px solid rgba(115,131,255,.25);box-shadow:var(--shadow)}
-.hero-badge{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;padding:4px 10px;border-radius:999px;border:1px solid rgba(155,107,255,.5);color:var(--muted);margin-bottom:18px}
-.hero h1{font-size:clamp(32px,4vw,38px);margin-bottom:12px}
-.hero p{color:var(--muted);max-width:520px;margin-bottom:22px}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  animation:logoFadeIn .6s ease-out forwards;
+}
+
+.logo-mark{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  background:radial-gradient(circle at 30% 0,var(--primary),var(--accent));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 16px rgba(77,240,255,.6);
+  overflow:hidden;
+  transition: box-shadow .35s ease, transform .35s ease;
+}
+
+.logo-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.logo-mark:hover{
+  box-shadow:
+    0 0 12px rgba(77,240,255,.6),
+    0 0 28px rgba(155,107,255,.6);
+  transform: translateY(-1px);
+}
+
+.logo-text{
+  font-weight:600;
+  letter-spacing:.12em;
+  font-size:14px;
+  text-transform:uppercase;
+  color:var(--muted)
+}
+
+@keyframes logoFadeIn{
+  from{opacity:0;transform:translateY(-6px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+
+main{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:36px
+}
+
+@media(max-width:900px){
+  main{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:flex-start}
+}
+
+.hero{
+  background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
+  border-radius:28px;
+  padding:32px;
+  border:1px solid rgba(115,131,255,.25);
+  box-shadow:var(--shadow)
+}
+
+.hero-badge{
+  display:inline-block;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid rgba(155,107,255,.5);
+  color:var(--muted);
+  margin-bottom:18px
+}
+
+.hero h1{
+  font-size:clamp(32px,4vw,38px);
+  margin-bottom:12px
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:520px;
+  margin-bottom:22px
+}
+
 .tags{display:flex;flex-wrap:wrap;gap:10px}
-.tag{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.tag{
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--muted)
+}
+
 .stack{display:flex;flex-direction:column;gap:22px}
-.card{background:radial-gradient(circle at top left,#111425 0,#050714 62%);border-radius:var(--radius);border:1px solid var(--border);padding:20px}
-.card h3{font-size:13px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:10px}
+
+.card{
+  background:radial-gradient(circle at top left,#111425 0,#050714 62%);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  padding:20px
+}
+
+.card h3{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--muted);
+  margin-bottom:10px
+}
+
 .card p{font-size:14px;color:#e6e9ff}
-ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{font-size:11px;padding:5px 11px;border-radius:999px;border:1px solid rgba(103,121,255,.6);color:var(--muted)}
+
+ul.chips{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px
+}
+
+.chip{
+  font-size:11px;
+  padding:5px 11px;
+  border-radius:999px;
+  border:1px solid rgba(103,121,255,.6);
+  color:var(--muted)
+}
+
 .timeline{display:flex;flex-direction:column;gap:14px}
-.timeline-item{display:grid;grid-template-columns:10px 1fr;gap:14px}
-.dot{width:10px;height:10px;border-radius:50%;margin-top:6px;background:radial-gradient(circle,var(--accent),#050714)}
-.footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
+
+.timeline-item{
+  display:grid;
+  grid-template-columns:10px 1fr;
+  gap:14px
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  margin-top:6px;
+  background:radial-gradient(circle,var(--accent),#050714)
+}
+
+.footer{
+  margin-top:40px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px
+}
 </style>
 </head>
+
 <body>
 <div class="wrapper">
+
 <header>
-<div class="logo"><div class="logo-mark">C.Ai</div><div class="logo-text">Mas Choi | Ai Evaluator</div></div>
+  <div class="logo">
+    <div class="logo-mark">
+      <img 
+        src="assets/logo-mas-choi.png"
+        srcset="assets/logo-mas-choi@2x.png 2x"
+        alt="Mas Choi AI Evaluator Logo">
+    </div>
+    <div class="logo-text">Mas Choi | AI Evaluator</div>
+  </div>
 </header>
+
 <main>
 <section class="hero">
-<div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
-<h1>Building fair, empathic, and human-centered AI.</h1>
-<p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
-<div class="tags"><div class="tag">Bias & Fairness</div><div class="tag">Tone & Empathy</div><div class="tag">Human-Centered Evaluation</div></div>
+  <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
+  <h1>Building fair, empathic, and human-centered AI.</h1>
+  <p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
+  <div class="tags">
+    <div class="tag">Bias & Fairness</div>
+    <div class="tag">Tone & Empathy</div>
+    <div class="tag">Human-Centered Evaluation</div>
+  </div>
 </section>
+
 <section class="stack">
-<div class="card"><h3>About</h3><p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p></div>
-<div class="card"><h3>Why Psychology in AI</h3><p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs—ensuring responses remain helpful, fair, and context-aware.</p><ul class="chips"><li class="chip">Cognitive Bias Awareness</li><li class="chip">Ethical Sensitivity</li><li class="chip">Human Judgment</li></ul></div>
-<div class="card"><h3>Evaluation Framework</h3><ul class="chips"><li class="chip">Clarity & Relevance</li><li class="chip">Bias & Fairness</li><li class="chip">Tone & Emotional Fit</li><li class="chip">Safety Alignment</li></ul></div>
-<div class="card"><h3>Applied Evaluation Practice</h3><div class="timeline"><div class="timeline-item"><div class="dot"></div><div><strong>Bias Sensitivity Review</strong><br/>Evaluated response differences across roles, professions, and social contexts.</div></div><div class="timeline-item"><div class="dot"></div><div><strong>Tone & Empathy Calibration</strong><br/>Assessed emotional appropriateness in sensitive user scenarios.</div></div><div class="timeline-item"><div class="dot"></div><div><strong>Advanced Annotation</strong><br/>Manual labeling for relevance, safety, and response quality.</div></div></div></div>
-<div class="card"><h3>Contact</h3><p>Open to early-stage collaboration, feedback, and AI evaluation opportunities.</p><p>Email: maschoi313@gmail.com<br/>Timezone: GMT+7 (Indonesia)</p><div style="margin-top:14px"><div class="badge-base LI-profile-badge" data-locale="in_ID" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="muhammad-nur-choiri-5b6626229" data-version="v1"></div></div></div>
+  <div class="card">
+    <h3>About</h3>
+    <p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p>
+  </div>
+
+  <div class="card">
+    <h3>Why Psychology in AI</h3>
+    <p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs—ensuring responses remain helpful, fair, and context-aware.</p>
+    <ul class="chips">
+      <li class="chip">Cognitive Bias Awareness</li>
+      <li class="chip">Ethical Sensitivity</li>
+      <li class="chip">Human Judgment</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Evaluation Framework</h3>
+    <ul class="chips">
+      <li class="chip">Clarity & Relevance</li>
+      <li class="chip">Bias & Fairness</li>
+      <li class="chip">Tone & Emotional Fit</li>
+      <li class="chip">Safety Alignment</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Applied Evaluation Practice</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div><strong>Bias Sensitivity Review</strong><br/>Evaluated response differences across roles, professions, and social contexts.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div><strong>Tone & Empathy Calibration</strong><br/>Assessed emotional appropriateness in sensitive user scenarios.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div><strong>Advanced Annotation</strong><br/>Manual labeling for relevance, safety, and response quality.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Contact</h3>
+    <p>Open to early-stage collaboration, feedback, and AI evaluation opportunities.</p>
+    <p>Email: maschoi313@gmail.com<br/>Timezone: GMT+7 (Indonesia)</p>
+    <div style="margin-top:14px">
+      <div class="badge-base LI-profile-badge"
+        data-locale="in_ID"
+        data-size="medium"
+        data-theme="light"
+        data-type="HORIZONTAL"
+        data-vanity="muhammad-nur-choiri-5b6626229"
+        data-version="v1"></div>
+    </div>
+  </div>
 </section>
 </main>
+
 <div class="footer">© 2025 Mas Choi · AI Trainer & Evaluator</div>
+
 </div>
+
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>
