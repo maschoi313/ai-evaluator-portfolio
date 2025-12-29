@@ -94,7 +94,7 @@ main{
   gap:24px;
 }
 
-/* Signal Panel */
+/* --- Signal Panel --- */
 .signal{
   background:rgba(255,255,255,.03);
   border:1px solid var(--border);
@@ -107,15 +107,28 @@ main{
   text-transform:uppercase;
   letter-spacing:.14em;
   color:var(--muted);
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
+
+.signal-item{margin-bottom:14px}
+
+.signal-label{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  font-size:13px;
+  color:#e6e9ff;
+  margin-bottom:6px;
+}
+
+.signal-label span{font-weight:500}
+.signal-label small{font-size:11px;color:var(--muted)}
 
 .bar{
   height:6px;
   border-radius:999px;
   background:rgba(255,255,255,.08);
   overflow:hidden;
-  margin-bottom:10px;
 }
 
 .bar span{
@@ -126,9 +139,10 @@ main{
   animation:fill 10s ease-in-out infinite;
 }
 
-.bar:nth-child(2) span{animation-delay:1s}
-.bar:nth-child(3) span{animation-delay:2s}
-.bar:nth-child(4) span{animation-delay:3s}
+.signal-item:nth-child(2) .bar span{animation-delay:0s}
+.signal-item:nth-child(3) .bar span{animation-delay:1.5s}
+.signal-item:nth-child(4) .bar span{animation-delay:3s}
+.signal-item:nth-child(5) .bar span{animation-delay:4.5s}
 
 @keyframes fill{
   0%{width:0;opacity:.4}
@@ -136,7 +150,7 @@ main{
   100%{width:0;opacity:.4}
 }
 
-/* Flow Diagram */
+/* --- Flow Diagram --- */
 .flow{
   background:rgba(255,255,255,.03);
   border:1px solid var(--border);
@@ -270,6 +284,7 @@ ul.chips{
   <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
   <h1>Building fair, empathic, and human-centered AI.</h1>
   <p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
+
   <div class="tags">
     <div class="tag">Bias & Fairness</div>
     <div class="tag">Tone & Empathy</div>
@@ -279,10 +294,34 @@ ul.chips{
   <div class="infographics">
     <div class="signal">
       <h4>Evaluation Signals</h4>
-      <div class="bar"><span></span></div>
-      <div class="bar"><span></span></div>
-      <div class="bar"><span></span></div>
-      <div class="bar"><span></span></div>
+
+      <div class="signal-item">
+        <div class="signal-label">
+          <span>Clarity</span><small>Relevance & understandability</small>
+        </div>
+        <div class="bar"><span></span></div>
+      </div>
+
+      <div class="signal-item">
+        <div class="signal-label">
+          <span>Bias</span><small>Fairness & assumption check</small>
+        </div>
+        <div class="bar"><span></span></div>
+      </div>
+
+      <div class="signal-item">
+        <div class="signal-label">
+          <span>Tone</span><small>Emotional alignment</small>
+        </div>
+        <div class="bar"><span></span></div>
+      </div>
+
+      <div class="signal-item">
+        <div class="signal-label">
+          <span>Safety</span><small>Policy & risk awareness</small>
+        </div>
+        <div class="bar"><span></span></div>
+      </div>
     </div>
 
     <div class="flow">
