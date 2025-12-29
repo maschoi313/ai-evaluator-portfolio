@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Mas Choi | AI Trainer & Evaluator</title>
+<title>Mas Choi | AI Trainer & Evaluator (Psychology-Informed)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, tone, fairness, and human-centered AI evaluation." />
+<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, fairness, tone alignment, and human-centered AI evaluation." />
 
-<meta property="og:title" content="Mas Choi | AI Trainer & Evaluator">
-<meta property="og:description" content="Human-centered AI evaluation with a psychology background.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo-mas-choi.png">
+<meta property="og:title" content="Mas Choi | AI Trainer & Evaluator" />
+<meta property="og:description" content="AI Trainer & Evaluator with a Psychology background." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/logo-mas-choi.png" />
 
 <link rel="icon" type="image/png" href="assets/logo-mas-choi.png">
 
@@ -21,121 +21,139 @@
   --text:#f5f7ff;
   --muted:#9aa0c6;
   --border:rgba(255,255,255,.08);
-  --radius:18px;
+  --radius:16px;
+  --shadow:0 18px 45px rgba(0,0,0,.65);
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:system-ui,-apple-system,sans-serif;
-  background:radial-gradient(circle at top,#1b2440 0,#050714 60%);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;
+  background:radial-gradient(circle at top,#1b2440 0,#050714 55%);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.65;
 }
 
-.wrapper{max-width:1100px;margin:auto;padding:32px 20px 80px}
+.wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px}
 
-/* HEADER */
-header{display:flex;align-items:center;gap:16px;margin-bottom:44px}
-header img{width:170px}
+header{margin-bottom:40px}
+.logo{display:flex;align-items:center;gap:16px}
+.logo img{width:160px}
+.logo-text{
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 
-/* LAYOUT */
-main{display:grid;grid-template-columns:1.2fr .8fr;gap:42px}
-@media(max-width:900px){main{grid-template-columns:1fr}}
+/* ===== LAYOUT ===== */
+main{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:42px;
+}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
-  background:radial-gradient(circle at top left,#181f3a,#050714 60%);
+  background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
   border-radius:28px;
-  padding:34px;
+  padding:36px;
   border:1px solid rgba(115,131,255,.25);
-  margin-bottom:36px;
+  box-shadow:var(--shadow);
 }
 
-.role{
-  font-size:12px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:12px;
-}
-
-.hero h1{font-size:clamp(30px,4vw,38px);margin-bottom:12px}
-.hero p{color:var(--muted);max-width:560px}
-
-/* INFO GRAPHICS */
-.hero-visual{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.visual-box{
-  background:#050714;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-}
-.visual-box h4{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:12px;
-}
-.panel{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-.panel div,.flow span{
-  padding:10px;
+.hero-badge{
   font-size:11px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid rgba(155,107,255,.5);
   color:var(--muted);
-}
-.flow{display:flex;justify-content:space-between}
-
-/* CRITERIA */
-.criteria{
-  margin-top:26px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.criteria div{
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  font-size:12px;
-  text-align:center;
-  color:var(--muted);
+  display:inline-block;
+  margin-bottom:18px;
 }
 
-/* RIGHT COLUMN */
-.stack{display:flex;flex-direction:column;gap:22px}
+.hero h1{font-size:clamp(32px,4vw,38px);margin-bottom:12px}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:24px}
+
+.tags{display:flex;gap:10px;flex-wrap:wrap}
+.tag{
+  font-size:11px;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+
+/* ===== RIGHT COLUMN ===== */
+.right-column{
+  position:relative;
+}
+
+.right-column::before{
+  content:"";
+  position:absolute;
+  left:-22px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom, transparent, var(--accent), transparent);
+  opacity:.6;
+}
+
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  position:sticky;
+  top:32px;
+}
+
 .card{
-  background:radial-gradient(circle at top left,#111425,#050714 65%);
-  border:1px solid var(--border);
+  background:radial-gradient(circle at top left,#111425 0,#050714 62%);
   border-radius:var(--radius);
-  padding:20px;
+  border:1px solid var(--border);
+  padding:22px;
 }
+
 .card h3{
   font-size:13px;
-  letter-spacing:.14em;
   text-transform:uppercase;
+  letter-spacing:.16em;
   color:var(--muted);
   margin-bottom:10px;
 }
+
 .card p{font-size:14px;color:#e6e9ff}
 
-/* FOOTER */
-.footer{text-align:center;font-size:13px;color:var(--muted);margin-top:48px}
+ul.chips{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
 
-@media(max-width:600px){
-  .hero-visual{grid-template-columns:1fr}
-  .criteria{grid-template-columns:1fr 1fr}
+.chip{
+  font-size:11px;
+  padding:5px 11px;
+  border-radius:999px;
+  border:1px solid rgba(103,121,255,.6);
+  color:var(--muted);
+}
+
+.footer{
+  margin-top:56px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  main{grid-template-columns:1fr}
+  .right-column::before{display:none}
+  .stack{position:static}
 }
 </style>
 </head>
@@ -144,119 +162,48 @@ main{display:grid;grid-template-columns:1.2fr .8fr;gap:42px}
 <div class="wrapper">
 
 <header>
-  <!-- cache-buster supaya logo pasti muncul -->
-  <img src="assets/logo-mas-choi.png?v=2" alt="Mas Choi Logo">
+  <div class="logo">
+    <img src="assets/logo-mas-choi.png" alt="Mas Choi Logo">
+    <div class="logo-text">Mas Choi | AI Evaluator</div>
+  </div>
 </header>
 
 <main>
 
-<!-- LEFT COLUMN -->
-<section>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="role">AI Trainer & Evaluator · Psychology-Informed</div>
-  <h1>Evaluating AI through a human-centered lens.</h1>
-  <p>I assess AI responses for bias, tone, fairness, and emotional alignment—ensuring outputs are safe and empathetic.</p>
-
-  <div class="hero-visual">
-    <div class="visual-box">
-      <h4>Evaluation Panel</h4>
-      <div class="panel">
-        <div>Bias</div><div>Tone</div><div>Safety</div>
-        <div>Clarity</div><div>Empathy</div><div>Fairness</div>
-      </div>
-    </div>
-
-    <div class="visual-box">
-      <h4>AI Response Lifecycle</h4>
-      <div class="flow">
-        <span>Prompt</span><span>Response</span><span>Evaluate</span><span>Refine</span>
-      </div>
-    </div>
+<section class="hero">
+  <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
+  <h1>Building fair, empathic, and human-centered AI.</h1>
+  <p>Psychology-informed AI evaluation focusing on bias, tone, and real human impact.</p>
+  <div class="tags">
+    <div class="tag">Bias & Fairness</div>
+    <div class="tag">Tone & Empathy</div>
+    <div class="tag">Human-Centered AI</div>
   </div>
-
-  <div class="criteria">
-    <div>Clarity</div>
-    <div>Bias & Fairness</div>
-    <div>Tone Alignment</div>
-    <div>Safety</div>
-  </div>
-</div>
-
-<!-- SAMPLE CASE 1 -->
-<div class="hero">
-  <div class="role">Sample Evaluation Case 1</div>
-  <h1 style="font-size:22px">Career Self-Doubt</h1>
-
-  <div class="visual-box">
-    <h4>Scenario</h4>
-    <p>User asks for career advice while expressing self-doubt.</p>
-  </div>
-
-  <div class="visual-box" style="margin-top:14px">
-    <h4>AI Response</h4>
-    <p>“You might not be good enough yet, but with enough effort, you can try improving your skills.”</p>
-  </div>
-
-  <div class="visual-box" style="margin-top:14px">
-    <h4>Final Judgment</h4>
-    <p>⚠️ <strong>Needs Revision</strong> — Improve empathy and confidence framing.</p>
-  </div>
-</div>
-
-<!-- SAMPLE CASE 2 -->
-<div class="hero">
-  <div class="role">Sample Evaluation Case 2</div>
-  <h1 style="font-size:22px">Emotional Vulnerability</h1>
-
-  <div class="visual-box">
-    <h4>Scenario</h4>
-    <p>User expresses emotional exhaustion and overwhelm.</p>
-  </div>
-
-  <div class="visual-box" style="margin-top:14px">
-    <h4>AI Response</h4>
-    <p>“Everyone feels stressed sometimes. You should just relax and not overthink it.”</p>
-  </div>
-
-  <div class="visual-box" style="margin-top:14px">
-    <h4>Final Judgment</h4>
-    <p>⚠️ <strong>Needs Revision</strong> — Add validation and supportive language.</p>
-  </div>
-</div>
-
 </section>
 
-<!-- RIGHT COLUMN -->
-<section class="stack">
+<section class="right-column">
+<div class="stack">
 
-<div class="card">
-  <h3>About</h3>
-  <p>Psychology background with hands-on experience evaluating AI outputs for bias sensitivity, tone calibration, and response quality.</p>
+  <div class="card">
+    <h3>About</h3>
+    <p>I evaluate AI responses through a psychology-informed lens—focusing on how language and bias affect real users.</p>
+  </div>
+
+  <div class="card">
+    <h3>Evaluation Focus</h3>
+    <ul class="chips">
+      <li class="chip">Bias Detection</li>
+      <li class="chip">Tone Alignment</li>
+      <li class="chip">Safety Review</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Contact</h3>
+    <p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
+  </div>
+
 </div>
-
-<div class="card">
-  <h3>Applied Evaluation</h3>
-  <p>Manual annotation, scenario-based review, and qualitative judgment aligned with human-centered AI standards.</p>
-</div>
-
-<div class="card">
-  <h3>Contact</h3>
-  <p>
-    Email: maschoi313@gmail.com<br>
-    Timezone: GMT+7 (Indonesia)
-  </p>
-
-  <p style="margin-top:10px">
-    <a href="https://www.linkedin.com/in/muhammad-nur-choiri-5b6626229/"
-       target="_blank"
-       style="display:inline-block;padding:8px 14px;border:1px solid var(--border);border-radius:12px">
-      🔗 View LinkedIn Profile
-    </a>
-  </p>
-</div>
-
 </section>
 
 </main>
