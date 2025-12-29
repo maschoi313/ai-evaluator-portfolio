@@ -38,7 +38,7 @@ body{
 
 header{margin-bottom:42px}
 .logo{display:flex;align-items:center;gap:18px}
-.logo img{width:160px;height:auto}
+.logo img{width:160px}
 .logo-text{
   font-size:14px;
   letter-spacing:.14em;
@@ -53,7 +53,7 @@ main{
   gap:44px;
 }
 
-/* ===== HERO (LEFT) ===== */
+/* ===== HERO ===== */
 .hero{
   background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
   border-radius:28px;
@@ -86,28 +86,108 @@ main{
   color:var(--muted);
 }
 
-/* ===== RIGHT COLUMN ===== */
-.right-column{
-  position:relative;
+/* ===== INFOGRAPHICS ===== */
+.infographics{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
 }
 
+/* Signal Panel */
+.signal{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+}
+
+.signal h4{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.bar{
+  height:6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.bar span{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(to right,var(--primary),var(--accent));
+  animation:fill 10s ease-in-out infinite;
+}
+
+.bar:nth-child(2) span{animation-delay:1s}
+.bar:nth-child(3) span{animation-delay:2s}
+.bar:nth-child(4) span{animation-delay:3s}
+
+@keyframes fill{
+  0%{width:0;opacity:.4}
+  50%{width:100%;opacity:.9}
+  100%{width:0;opacity:.4}
+}
+
+/* Flow Diagram */
+.flow{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+}
+
+.flow h4{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.flow-step{
+  font-size:13px;
+  color:#dfe3ff;
+  opacity:.3;
+  animation:flow 12s ease-in-out infinite;
+}
+
+.flow-step:nth-child(2){animation-delay:0s}
+.flow-step:nth-child(3){animation-delay:3s}
+.flow-step:nth-child(4){animation-delay:6s}
+.flow-step:nth-child(5){animation-delay:9s}
+
+@keyframes flow{
+  0%{opacity:.3}
+  25%{opacity:1}
+  50%{opacity:.3}
+  100%{opacity:.3}
+}
+
+/* ===== RIGHT COLUMN ===== */
+.right-column{position:relative}
 .right-column::before{
   content:"";
   position:absolute;
-  left:-22px;
-  top:0;
-  bottom:0;
+  left:-22px;top:0;bottom:0;
   width:2px;
-  background:linear-gradient(to bottom, transparent, var(--accent), transparent);
+  background:linear-gradient(to bottom,transparent,var(--accent),transparent);
   opacity:.6;
 }
 
 .stack{
+  position:sticky;
+  top:32px;
   display:flex;
   flex-direction:column;
   gap:22px;
-  position:sticky;
-  top:32px;
 }
 
 .group-label{
@@ -115,7 +195,6 @@ main{
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:-6px;
 }
 
 .card{
@@ -151,7 +230,6 @@ ul.chips{
   color:var(--muted);
 }
 
-/* ===== TIMELINE ===== */
 .timeline{display:flex;flex-direction:column;gap:14px}
 .timeline-item{display:grid;grid-template-columns:10px 1fr;gap:14px}
 .dot{
@@ -169,6 +247,7 @@ ul.chips{
 
 @media(max-width:900px){
   main{grid-template-columns:1fr}
+  .infographics{grid-template-columns:1fr}
   .right-column::before{display:none}
   .stack{position:static}
 }
@@ -187,7 +266,6 @@ ul.chips{
 
 <main>
 
-<!-- LEFT COLUMN -->
 <section class="hero">
   <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
   <h1>Building fair, empathic, and human-centered AI.</h1>
@@ -197,9 +275,26 @@ ul.chips{
     <div class="tag">Tone & Empathy</div>
     <div class="tag">Human-Centered Evaluation</div>
   </div>
+
+  <div class="infographics">
+    <div class="signal">
+      <h4>Evaluation Signals</h4>
+      <div class="bar"><span></span></div>
+      <div class="bar"><span></span></div>
+      <div class="bar"><span></span></div>
+      <div class="bar"><span></span></div>
+    </div>
+
+    <div class="flow">
+      <h4>Evaluation Flow</h4>
+      <div class="flow-step">User Prompt</div>
+      <div class="flow-step">AI Response</div>
+      <div class="flow-step">Psychology Lens</div>
+      <div class="flow-step">Quality Judgment</div>
+    </div>
+  </div>
 </section>
 
-<!-- RIGHT COLUMN -->
 <section class="right-column">
 <div class="stack">
 
@@ -250,10 +345,7 @@ ul.chips{
 
   <div class="card">
     <h3>Contact</h3>
-    <p>
-      Email: maschoi313@gmail.com<br>
-      Timezone: GMT+7 (Indonesia)
-    </p>
+    <p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
     <div style="margin-top:14px">
       <div class="badge-base LI-profile-badge"
         data-locale="in_ID"
@@ -272,8 +364,6 @@ ul.chips{
 
 <div class="footer">
 © 2025 Mas Choi · AI Trainer & Evaluator
-</div>
-
 </div>
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
