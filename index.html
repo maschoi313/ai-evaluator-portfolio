@@ -73,7 +73,7 @@ header{
 }
 
 @media(max-width:600px){
-  .logo img{width:150px}
+  .logo img{width:120px}
 }
 
 /* ===== LAYOUT ===== */
@@ -132,6 +132,62 @@ main{
   border-radius:999px;
   border:1px solid var(--border);
   color:var(--muted);
+}
+
+/* ===== Evaluation Panel ===== */
+.eval-panel{
+  margin-top:26px;
+  padding:18px;
+  border-radius:14px;
+  background:linear-gradient(145deg,#0e1228,#050714);
+  border:1px solid rgba(115,131,255,.18);
+}
+
+.eval-title{
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.eval-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:10px;
+}
+
+.eval-label{
+  font-size:13px;
+  color:#e6e9ff;
+  min-width:150px;
+}
+
+.eval-bar{
+  flex:1;
+  height:6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+}
+
+.eval-fill{
+  height:100%;
+  width:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  animation:fillBar 1.8s ease forwards;
+}
+
+.eval-85{animation-delay:.2s; max-width:85%}
+.eval-90{animation-delay:.35s; max-width:90%}
+.eval-80{animation-delay:.5s; max-width:80%}
+.eval-95{animation-delay:.65s; max-width:95%}
+
+@keyframes fillBar{
+  from{width:0}
+  to{width:100%}
 }
 
 /* ===== RIGHT STACK ===== */
@@ -222,10 +278,36 @@ ul.chips{
   <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
   <h1>Building fair, empathic, and human-centered AI.</h1>
   <p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
+
   <div class="tags">
     <div class="tag">Bias & Fairness</div>
     <div class="tag">Tone & Empathy</div>
     <div class="tag">Human-Centered Evaluation</div>
+  </div>
+
+  <!-- Evaluation Panel -->
+  <div class="eval-panel">
+    <div class="eval-title">Evaluation Focus</div>
+
+    <div class="eval-item">
+      <div class="eval-label">Bias & Fairness</div>
+      <div class="eval-bar"><div class="eval-fill eval-85"></div></div>
+    </div>
+
+    <div class="eval-item">
+      <div class="eval-label">Tone Alignment</div>
+      <div class="eval-bar"><div class="eval-fill eval-95"></div></div>
+    </div>
+
+    <div class="eval-item">
+      <div class="eval-label">Safety Alignment</div>
+      <div class="eval-bar"><div class="eval-fill eval-80"></div></div>
+    </div>
+
+    <div class="eval-item">
+      <div class="eval-label">Clarity & Relevance</div>
+      <div class="eval-bar"><div class="eval-fill eval-90"></div></div>
+    </div>
   </div>
 </section>
 
