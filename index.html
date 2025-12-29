@@ -36,12 +36,12 @@ body{
 
 .wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px}
 
-header{margin-bottom:40px}
-.logo{display:flex;align-items:center;gap:16px}
-.logo img{width:160px}
+header{margin-bottom:42px}
+.logo{display:flex;align-items:center;gap:18px}
+.logo img{width:160px;height:auto}
 .logo-text{
   font-size:14px;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--muted);
 }
@@ -50,10 +50,10 @@ header{margin-bottom:40px}
 main{
   display:grid;
   grid-template-columns:1.25fr .75fr;
-  gap:42px;
+  gap:44px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (LEFT) ===== */
 .hero{
   background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
   border-radius:28px;
@@ -65,7 +65,7 @@ main{
 .hero-badge{
   font-size:11px;
   text-transform:uppercase;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   padding:5px 12px;
   border-radius:999px;
   border:1px solid rgba(155,107,255,.5);
@@ -110,6 +110,14 @@ main{
   top:32px;
 }
 
+.group-label{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:-6px;
+}
+
 .card{
   background:radial-gradient(circle at top left,#111425 0,#050714 62%);
   border-radius:var(--radius);
@@ -143,6 +151,15 @@ ul.chips{
   color:var(--muted);
 }
 
+/* ===== TIMELINE ===== */
+.timeline{display:flex;flex-direction:column;gap:14px}
+.timeline-item{display:grid;grid-template-columns:10px 1fr;gap:14px}
+.dot{
+  width:10px;height:10px;border-radius:50%;
+  margin-top:6px;
+  background:radial-gradient(circle,var(--accent),#050714);
+}
+
 .footer{
   margin-top:56px;
   text-align:center;
@@ -170,37 +187,82 @@ ul.chips{
 
 <main>
 
+<!-- LEFT COLUMN -->
 <section class="hero">
   <div class="hero-badge">AI Trainer & Evaluator · Psychology Background</div>
   <h1>Building fair, empathic, and human-centered AI.</h1>
-  <p>Psychology-informed AI evaluation focusing on bias, tone, and real human impact.</p>
+  <p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
   <div class="tags">
     <div class="tag">Bias & Fairness</div>
     <div class="tag">Tone & Empathy</div>
-    <div class="tag">Human-Centered AI</div>
+    <div class="tag">Human-Centered Evaluation</div>
   </div>
 </section>
 
+<!-- RIGHT COLUMN -->
 <section class="right-column">
 <div class="stack">
 
+  <div class="group-label">Profile</div>
+
   <div class="card">
     <h3>About</h3>
-    <p>I evaluate AI responses through a psychology-informed lens—focusing on how language and bias affect real users.</p>
+    <p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p>
   </div>
 
   <div class="card">
-    <h3>Evaluation Focus</h3>
+    <h3>Why Psychology in AI</h3>
+    <p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p>
     <ul class="chips">
-      <li class="chip">Bias Detection</li>
-      <li class="chip">Tone Alignment</li>
-      <li class="chip">Safety Review</li>
+      <li class="chip">Cognitive Bias Awareness</li>
+      <li class="chip">Ethical Sensitivity</li>
+      <li class="chip">Human Judgment</li>
+    </ul>
+  </div>
+
+  <div class="group-label">Evaluation</div>
+
+  <div class="card">
+    <h3>Evaluation Framework</h3>
+    <ul class="chips">
+      <li class="chip">Clarity & Relevance</li>
+      <li class="chip">Bias & Fairness</li>
+      <li class="chip">Tone & Emotional Fit</li>
+      <li class="chip">Safety Alignment</li>
     </ul>
   </div>
 
   <div class="card">
+    <h3>Applied Evaluation Practice</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div><strong>Case 1 – Bias Sensitivity Review</strong><br>Evaluated response differences across roles, professions, and social contexts.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div><strong>Case 2 – Tone & Empathy Calibration</strong><br>Assessed emotional appropriateness in sensitive user scenarios.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-label">Contact</div>
+
+  <div class="card">
     <h3>Contact</h3>
-    <p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
+    <p>
+      Email: maschoi313@gmail.com<br>
+      Timezone: GMT+7 (Indonesia)
+    </p>
+    <div style="margin-top:14px">
+      <div class="badge-base LI-profile-badge"
+        data-locale="in_ID"
+        data-size="medium"
+        data-theme="light"
+        data-type="HORIZONTAL"
+        data-vanity="muhammad-nur-choiri-5b6626229"
+        data-version="v1"></div>
+    </div>
   </div>
 
 </div>
@@ -213,5 +275,7 @@ ul.chips{
 </div>
 
 </div>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>
