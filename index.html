@@ -24,6 +24,7 @@
 --radius:16px;
 --shadow:0 18px 45px rgba(0,0,0,.65);
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
@@ -33,7 +34,11 @@ color:var(--text);
 line-height:1.65;
 }
 
-.wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px}
+.wrapper{
+max-width:1100px;
+margin:0 auto;
+padding:32px 20px 72px;
+}
 
 header{
 display:flex;
@@ -60,7 +65,7 @@ gap:36px;
 main{grid-template-columns:1fr}
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
 border-radius:28px;
@@ -77,11 +82,57 @@ margin-bottom:12px;
 .hero p{
 color:var(--muted);
 max-width:520px;
-margin-bottom:22px;
+margin-bottom:26px;
 }
 
-/* RIGHT COLUMN */
-.stack{display:flex;flex-direction:column;gap:22px}
+/* ===== Evaluation Signals Panel ===== */
+.signal-panel{
+margin-top:18px;
+padding:20px;
+border-radius:18px;
+background:radial-gradient(circle at top left,#111425 0,#050714 62%);
+border:1px solid var(--border);
+}
+
+.signal-panel h4{
+font-size:12px;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:14px;
+}
+
+.signal{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+font-size:13px;
+}
+
+.dots{
+display:flex;
+gap:6px;
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+}
+
+.dot.active{
+background:linear-gradient(135deg,var(--primary),var(--accent));
+box-shadow:0 0 8px rgba(155,107,255,.6);
+}
+
+/* ===== RIGHT COLUMN ===== */
+.stack{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
 
 .card{
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
@@ -98,7 +149,10 @@ color:var(--muted);
 margin-bottom:10px;
 }
 
-.card p{font-size:14px;color:#e6e9ff}
+.card p{
+font-size:14px;
+color:#e6e9ff;
+}
 
 ul.chips{
 list-style:none;
@@ -128,7 +182,7 @@ grid-template-columns:10px 1fr;
 gap:14px;
 }
 
-.dot{
+.timeline-dot{
 width:10px;
 height:10px;
 border-radius:50%;
@@ -136,7 +190,7 @@ margin-top:6px;
 background:radial-gradient(circle,var(--accent),#050714);
 }
 
-/* LinkedIn FIX */
+/* ===== LinkedIn Fix ===== */
 .linkedin-box{
 margin-top:14px;
 background:#ffffff;
@@ -163,21 +217,81 @@ font-size:13px;
 
 <main>
 
+<!-- LEFT -->
 <section class="hero">
 <h1>Building fair, empathic, and human-centered AI.</h1>
-<p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
+<p>
+Early-stage AI Trainer & Evaluator with a Psychology background,
+focused on bias detection, tone alignment, and post-response quality evaluation.
+</p>
+
+<div class="signal-panel">
+<h4>Evaluation Signals</h4>
+
+<div class="signal">
+<span>Bias Sensitivity</span>
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
+</div>
+
+<div class="signal">
+<span>Tone Alignment</span>
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+</div>
+</div>
+
+<div class="signal">
+<span>Safety Awareness</span>
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
+</div>
+
+<div class="signal">
+<span>Context Accuracy</span>
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
+</div>
+
+</div>
 </section>
 
+<!-- RIGHT -->
 <section class="stack">
 
 <div class="card">
 <h3>About</h3>
-<p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p>
+<p>
+I evaluate AI responses through a psychology-informed lens—focusing on how
+language, tone, and bias affect real human users.
+</p>
 </div>
 
 <div class="card">
 <h3>Why Psychology in AI</h3>
-<p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p>
+<p>
+My background enables me to identify cognitive bias, ethical risk,
+and emotional mismatch in AI outputs.
+</p>
 <ul class="chips">
 <li class="chip">Cognitive Bias Awareness</li>
 <li class="chip">Ethical Sensitivity</li>
@@ -198,24 +312,40 @@ font-size:13px;
 <div class="card">
 <h3>Applied Evaluation Practice</h3>
 <div class="timeline">
+
 <div class="timeline-item">
-<div class="dot"></div>
-<div><strong>Bias Sensitivity Review</strong><br>Evaluated response differences across roles and contexts.</div>
+<div class="timeline-dot"></div>
+<div>
+<strong>Bias Sensitivity Review</strong><br>
+Evaluated response differences across roles and social contexts.
 </div>
+</div>
+
 <div class="timeline-item">
-<div class="dot"></div>
-<div><strong>Tone & Empathy Calibration</strong><br>Assessed emotional appropriateness in sensitive scenarios.</div>
+<div class="timeline-dot"></div>
+<div>
+<strong>Tone & Empathy Calibration</strong><br>
+Assessed emotional appropriateness in sensitive scenarios.
 </div>
+</div>
+
 <div class="timeline-item">
-<div class="dot"></div>
-<div><strong>Advanced Annotation</strong><br>Manual labeling for safety and response quality.</div>
+<div class="timeline-dot"></div>
+<div>
+<strong>Advanced Annotation</strong><br>
+Manual labeling for safety, relevance, and response quality.
 </div>
+</div>
+
 </div>
 </div>
 
 <div class="card">
 <h3>Contact</h3>
-<p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
+<p>
+Email: maschoi313@gmail.com<br>
+Timezone: GMT+7 (Indonesia)
+</p>
 
 <div class="linkedin-box">
 <div class="badge-base LI-profile-badge"
@@ -226,13 +356,15 @@ data-type="HORIZONTAL"
 data-vanity="muhammad-nur-choiri-5b6626229"
 data-version="v1"></div>
 </div>
-
 </div>
 
 </section>
 </main>
 
-<div class="footer">© 2025 Mas Choi · AI Trainer & Evaluator</div>
+<div class="footer">
+© 2025 Mas Choi · AI Trainer & Evaluator
+</div>
+
 </div>
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
