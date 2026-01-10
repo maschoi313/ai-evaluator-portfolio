@@ -73,115 +73,6 @@ border:1px solid rgba(115,131,255,.25);
 box-shadow:var(--shadow);
 }
 
-.hero-badge{
-display:inline-block;
-font-size:11px;
-letter-spacing:.14em;
-padding:4px 10px;
-border-radius:999px;
-border:1px solid rgba(155,107,255,.5);
-color:var(--muted);
-margin-bottom:18px;
-}
-
-.hero h1{
-font-size:clamp(32px,4vw,38px);
-margin-bottom:12px;
-}
-
-.hero p{
-color:var(--muted);
-max-width:520px;
-margin-bottom:24px;
-}
-
-.tags{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:28px;
-}
-
-.tag{
-font-size:11px;
-padding:4px 10px;
-border-radius:999px;
-border:1px solid var(--border);
-color:var(--muted);
-}
-
-/* ===== Evaluation Coverage ===== */
-.eval-coverage h4{
-font-size:12px;
-letter-spacing:.14em;
-text-transform:uppercase;
-color:var(--muted);
-margin-bottom:18px;
-}
-
-.eval-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
-}
-
-.eval-card{
-position:relative;
-background:radial-gradient(circle at top left,#111425 0,#050714 62%);
-border-radius:14px;
-border:1px solid var(--border);
-padding:16px;
-font-size:13px;
-cursor:help;
-}
-
-.eval-card span{
-font-size:11px;
-letter-spacing:.12em;
-color:var(--accent);
-text-transform:uppercase;
-}
-
-.eval-card h5{
-margin:6px 0 8px;
-font-size:14px;
-}
-
-.eval-card ul{
-padding-left:18px;
-color:#e6e9ff;
-}
-
-/* TOOLTIP */
-.tooltip{
-position:absolute;
-bottom:110%;
-left:50%;
-transform:translateX(-50%);
-background:#0b0f23;
-border:1px solid var(--border);
-border-radius:12px;
-padding:12px;
-width:260px;
-font-size:12px;
-color:#e6e9ff;
-opacity:0;
-pointer-events:none;
-transition:.25s ease;
-box-shadow:var(--shadow);
-z-index:10;
-}
-
-.eval-card:hover .tooltip{
-opacity:1;
-}
-
-.tooltip strong{
-color:var(--primary);
-display:block;
-margin-bottom:6px;
-}
-
 /* RIGHT COLUMN */
 .stack{
 display:flex;
@@ -206,23 +97,15 @@ margin-bottom:10px;
 
 .card p{font-size:14px;color:#e6e9ff}
 
-ul.chips{
-list-style:none;
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:10px;
+/* LinkedIn Fix */
+.linkedin-box{
+margin-top:14px;
+background:#ffffff;
+padding:10px;
+border-radius:12px;
+overflow:hidden;
 }
 
-.chip{
-font-size:11px;
-padding:5px 11px;
-border-radius:999px;
-border:1px solid rgba(103,121,255,.6);
-color:var(--muted);
-}
-
-/* Footer */
 .footer{
 margin-top:90px;
 text-align:center;
@@ -243,105 +126,11 @@ font-size:13px;
 <main>
 
 <section class="hero">
-<div class="hero-badge">Psychology-Informed AI Evaluation</div>
 <h1>Building fair, empathic, and human-centered AI.</h1>
 <p>I evaluate AI responses through a psychology-informed lens—focusing on bias, safety, context awareness, and post-response improvement.</p>
-
-<div class="tags">
-<div class="tag">Bias & Fairness</div>
-<div class="tag">Safety & Empathy</div>
-<div class="tag">Context Awareness</div>
-<div class="tag">Post-Response Review</div>
-</div>
-
-<div class="eval-coverage">
-<h4>Evaluation Coverage</h4>
-
-<div class="eval-grid">
-
-<div class="eval-card">
-<span>Case 01</span>
-<h5>Bias & Tone</h5>
-<ul>
-<li>Attribution bias</li>
-<li>Social framing</li>
-<li>Fairness feedback</li>
-</ul>
-<div class="tooltip">
-<strong>What is evaluated?</strong>
-Whether AI responses unfairly blame individuals or groups.<br><br>
-<strong>Evaluator action:</strong>
-Flag bias patterns and recommend balanced framing.
-</div>
-</div>
-
-<div class="eval-card">
-<span>Case 02</span>
-<h5>Safety & Empathy</h5>
-<ul>
-<li>Emotional risk</li>
-<li>Self-harm sensitivity</li>
-<li>De-escalation</li>
-</ul>
-<div class="tooltip">
-<strong>What is evaluated?</strong>
-AI handling of emotionally vulnerable users.<br><br>
-<strong>Evaluator action:</strong>
-Ensure empathy, safety compliance, and crisis-aware responses.
-</div>
-</div>
-
-<div class="eval-card">
-<span>Case 03</span>
-<h5>Context Awareness</h5>
-<ul>
-<li>Overconfidence</li>
-<li>Hallucination risk</li>
-<li>Uncertainty framing</li>
-</ul>
-<div class="tooltip">
-<strong>What is evaluated?</strong>
-Whether AI respects informational limits.<br><br>
-<strong>Evaluator action:</strong>
-Prevent unsupported claims and overconfident conclusions.
-</div>
-</div>
-
-<div class="eval-card">
-<span>Case 04</span>
-<h5>Post-Response Review</h5>
-<ul>
-<li>Output evaluation</li>
-<li>Label & severity</li>
-<li>Training feedback</li>
-</ul>
-<div class="tooltip">
-<strong>What is evaluated?</strong>
-Quality and safety of AI output after generation.<br><br>
-<strong>Evaluator action:</strong>
-Label issues and provide feedback for model improvement.
-</div>
-</div>
-
-</div>
-</div>
 </section>
 
 <section class="stack">
-
-<div class="card">
-<h3>About</h3>
-<p>I assess how AI language impacts users psychologically, ethically, and socially.</p>
-</div>
-
-<div class="card">
-<h3>Why Psychology in AI</h3>
-<ul class="chips">
-<li class="chip">Cognitive Bias</li>
-<li class="chip">Ethical Sensitivity</li>
-<li class="chip">Human Judgment</li>
-</ul>
-</div>
 
 <div class="card">
 <h3>Contact</h3>
@@ -349,6 +138,17 @@ Label issues and provide feedback for model improvement.
 Email: maschoi313@gmail.com<br>
 Timezone: GMT+7 (Indonesia)
 </p>
+
+<div class="linkedin-box">
+<div class="badge-base LI-profile-badge"
+data-locale="en_US"
+data-size="medium"
+data-theme="light"
+data-type="HORIZONTAL"
+data-vanity="muhammad-nur-choiri-5b6626229"
+data-version="v1"></div>
+</div>
+
 </div>
 
 </section>
@@ -359,5 +159,8 @@ Timezone: GMT+7 (Indonesia)
 </div>
 
 </div>
+
+<!-- LINKEDIN SCRIPT (WAJIB) -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>
