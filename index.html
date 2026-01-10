@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <title>Mas Choi | AI Trainer & Evaluator (Psychology-Informed)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, safety, and human-centered AI evaluation." />
+<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, fairness, tone alignment, and human-centered AI evaluation." />
 
 <meta property="og:title" content="Mas Choi | AI Trainer & Evaluator" />
-<meta property="og:description" content="Human-centered AI evaluation with psychology-informed judgment." />
+<meta property="og:description" content="AI Trainer & Evaluator with a Psychology background." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/logo-mas-choi.png" />
 
@@ -33,17 +33,13 @@ color:var(--text);
 line-height:1.65;
 }
 
-.wrapper{
-max-width:1100px;
-margin:0 auto;
-padding:32px 20px 90px;
-}
+.wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px}
 
 header{
 display:flex;
 align-items:center;
 gap:14px;
-margin-bottom:46px;
+margin-bottom:40px;
 }
 
 header img{width:150px}
@@ -56,7 +52,7 @@ color:var(--muted);
 
 main{
 display:grid;
-grid-template-columns:1.15fr .85fr;
+grid-template-columns:1.2fr .8fr;
 gap:36px;
 }
 
@@ -73,12 +69,19 @@ border:1px solid rgba(115,131,255,.25);
 box-shadow:var(--shadow);
 }
 
-/* RIGHT COLUMN */
-.stack{
-display:flex;
-flex-direction:column;
-gap:22px;
+.hero h1{
+font-size:clamp(32px,4vw,38px);
+margin-bottom:12px;
 }
+
+.hero p{
+color:var(--muted);
+max-width:520px;
+margin-bottom:22px;
+}
+
+/* RIGHT COLUMN */
+.stack{display:flex;flex-direction:column;gap:22px}
 
 .card{
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
@@ -97,17 +100,52 @@ margin-bottom:10px;
 
 .card p{font-size:14px;color:#e6e9ff}
 
-/* LinkedIn Fix */
+ul.chips{
+list-style:none;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:10px;
+}
+
+.chip{
+font-size:11px;
+padding:5px 11px;
+border-radius:999px;
+border:1px solid rgba(103,121,255,.6);
+color:var(--muted);
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.timeline-item{
+display:grid;
+grid-template-columns:10px 1fr;
+gap:14px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+margin-top:6px;
+background:radial-gradient(circle,var(--accent),#050714);
+}
+
+/* LinkedIn FIX */
 .linkedin-box{
 margin-top:14px;
 background:#ffffff;
 padding:10px;
 border-radius:12px;
-overflow:hidden;
 }
 
 .footer{
-margin-top:90px;
+margin-top:40px;
 text-align:center;
 color:var(--muted);
 font-size:13px;
@@ -120,24 +158,64 @@ font-size:13px;
 
 <header>
 <img src="assets/logo-mas-choi.png" alt="Mas Choi Logo">
-<span>AI Trainer & Evaluator</span>
+<span>Mas Choi | AI Evaluator</span>
 </header>
 
 <main>
 
 <section class="hero">
 <h1>Building fair, empathic, and human-centered AI.</h1>
-<p>I evaluate AI responses through a psychology-informed lens—focusing on bias, safety, context awareness, and post-response improvement.</p>
+<p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and response quality evaluation.</p>
 </section>
 
 <section class="stack">
 
 <div class="card">
+<h3>About</h3>
+<p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p>
+</div>
+
+<div class="card">
+<h3>Why Psychology in AI</h3>
+<p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p>
+<ul class="chips">
+<li class="chip">Cognitive Bias Awareness</li>
+<li class="chip">Ethical Sensitivity</li>
+<li class="chip">Human Judgment</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Evaluation Framework</h3>
+<ul class="chips">
+<li class="chip">Clarity & Relevance</li>
+<li class="chip">Bias & Fairness</li>
+<li class="chip">Tone & Emotional Fit</li>
+<li class="chip">Safety Alignment</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Applied Evaluation Practice</h3>
+<div class="timeline">
+<div class="timeline-item">
+<div class="dot"></div>
+<div><strong>Bias Sensitivity Review</strong><br>Evaluated response differences across roles and contexts.</div>
+</div>
+<div class="timeline-item">
+<div class="dot"></div>
+<div><strong>Tone & Empathy Calibration</strong><br>Assessed emotional appropriateness in sensitive scenarios.</div>
+</div>
+<div class="timeline-item">
+<div class="dot"></div>
+<div><strong>Advanced Annotation</strong><br>Manual labeling for safety and response quality.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
 <h3>Contact</h3>
-<p>
-Email: maschoi313@gmail.com<br>
-Timezone: GMT+7 (Indonesia)
-</p>
+<p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
 
 <div class="linkedin-box">
 <div class="badge-base LI-profile-badge"
@@ -154,13 +232,9 @@ data-version="v1"></div>
 </section>
 </main>
 
-<div class="footer">
-© 2025 Mas Choi · AI Trainer & Evaluator
+<div class="footer">© 2025 Mas Choi · AI Trainer & Evaluator</div>
 </div>
 
-</div>
-
-<!-- LINKEDIN SCRIPT (WAJIB) -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>
