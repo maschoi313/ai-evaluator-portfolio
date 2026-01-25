@@ -4,95 +4,89 @@
 <meta charset="UTF-8" />
 <title>Mas Choi | AI Trainer & Evaluator (Psychology-Informed)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, fairness, tone alignment, and human-centered AI evaluation." />
+<meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, tone, fairness, and human-centered evaluation." />
 
 <meta property="og:title" content="Mas Choi | AI Trainer & Evaluator" />
-<meta property="og:description" content="Early-stage AI Trainer & Evaluator with a Psychology background." />
+<meta property="og:description" content="AI Trainer & Evaluator with a Psychology background." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/logo-mas-choi.png" />
-
 <link rel="icon" type="image/png" href="assets/logo-mas-choi.png">
 
 <style>
 :root{
---bg:#050714;
---primary:#4df0ff;
---accent:#9b6bff;
---text:#f5f7ff;
---muted:#9aa0c6;
---border:rgba(255,255,255,.08);
---radius:16px;
---shadow:0 18px 45px rgba(0,0,0,.65);
+--bg:#050714;--primary:#4df0ff;--accent:#9b6bff;--text:#f5f7ff;
+--muted:#9aa0c6;--border:rgba(255,255,255,.08);
+--radius:16px;--shadow:0 18px 45px rgba(0,0,0,.65)
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
-font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
 background:radial-gradient(circle at top,#1b2440 0,#050714 55%);
-color:var(--text);
-line-height:1.65;
+color:var(--text);line-height:1.65
 }
+.wrapper{max-width:1100px;margin:auto;padding:32px 20px 72px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:40px}
+header img{width:140px}
+header span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
-.wrapper{max-width:1100px;margin:0 auto;padding:32px 20px 72px;}
-
-header{display:flex;align-items:center;gap:14px;margin-bottom:40px;}
-header img{width:150px}
-header span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-
-main{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;}
+main{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
 @media(max-width:900px){main{grid-template-columns:1fr}}
 
 .hero{
 background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
-border-radius:28px;
-padding:32px;
-border:1px solid rgba(115,131,255,.25);
-box-shadow:var(--shadow);
+border-radius:28px;padding:32px;border:1px solid rgba(115,131,255,.25);
+box-shadow:var(--shadow)
 }
-
-.hero h1{font-size:clamp(30px,4vw,36px);margin-bottom:12px;}
-.hero p{color:var(--muted);margin-bottom:22px;}
+.hero h1{font-size:clamp(30px,4vw,36px);margin-bottom:12px}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:20px}
 
 .signal-panel{
-margin-top:14px;padding:18px;border-radius:18px;
+margin-top:18px;padding:20px;border-radius:18px;
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
-border:1px solid var(--border);
+border:1px solid var(--border)
 }
-.signal-panel h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-.signal{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:10px;}
-.dots{display:flex;gap:6px;}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);animation:pulse 2s infinite;}
-.dot.active{background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:0 0 8px rgba(155,107,255,.6);}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.signal-panel h4{
+font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--muted);margin-bottom:14px
+}
+.signal{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px}
+.dots{display:flex;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15)}
+.dot.active{
+background:linear-gradient(135deg,var(--primary),var(--accent));
+box-shadow:0 0 8px rgba(155,107,255,.6);animation:pulse 2s infinite alternate
+}
+@keyframes pulse{from{opacity:.4}to{opacity:1}}
 
-.flow{margin-top:20px;display:flex;justify-content:space-between;text-align:center;font-size:12px;color:var(--muted);}
-.flow div{flex:1}
-.flow span{display:block;font-size:11px;margin-top:4px;color:var(--text)}
+.flow{
+margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px
+}
+.flow div{
+padding:10px;border:1px solid var(--border);border-radius:12px;
+text-align:center;font-size:12px;color:var(--muted)
+}
 
-.bars{margin-top:20px;}
-.bar{margin-bottom:10px;}
-.bar span{font-size:11px;color:var(--muted)}
-.fill{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--primary),var(--accent));margin-top:4px;animation:fill 3s infinite alternate;}
-@keyframes fill{from{width:40%}to{width:90%}}
+.bars{margin-top:20px}
+.bar{margin-bottom:10px}
+.bar span{font-size:12px}
+.bar-fill{
+height:6px;background:linear-gradient(90deg,var(--primary),var(--accent));
+border-radius:999px;animation:grow 2s ease forwards
+}
+@keyframes grow{from{width:0}to{width:80%}}
 
-.stack{display:flex;flex-direction:column;gap:22px;}
+.stack{display:flex;flex-direction:column;gap:22px}
 .card{
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
-border-radius:var(--radius);border:1px solid var(--border);padding:20px;
+border-radius:var(--radius);border:1px solid var(--border);padding:20px
 }
-.card h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.card p{font-size:14px;color:#e6e9ff;}
+.card h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.card p{font-size:14px;color:#e6e9ff}
+ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:11px;padding:5px 11px;border-radius:999px;border:1px solid rgba(103,121,255,.6);color:var(--muted)}
 
-ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-.chip{font-size:11px;padding:5px 11px;border-radius:999px;border:1px solid rgba(103,121,255,.6);color:var(--muted);}
-
-.timeline{display:flex;flex-direction:column;gap:14px;}
-.timeline-item{display:grid;grid-template-columns:10px 1fr;gap:14px;}
-.timeline-dot{width:10px;height:10px;border-radius:50%;margin-top:6px;background:radial-gradient(circle,var(--accent),#050714);}
-
-.linkedin-box{margin-top:14px;background:#fff;padding:10px;border-radius:12px;}
-.footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px;}
+.linkedin-box{margin-top:14px;background:#fff;padding:10px;border-radius:12px}
+.footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
 </style>
 </head>
 
@@ -108,61 +102,42 @@ ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 
 <section class="hero">
 <h1>Contributing to fair, empathic, and human-centered AI evaluation.</h1>
-<p>
-Early-stage AI Trainer & Evaluator with a Psychology background,
-focused on bias detection, tone alignment, and post-response quality evaluation.
-</p>
+<p>Early-stage AI Trainer & Evaluator with a Psychology background,
+focused on bias detection, tone alignment, and post-response quality evaluation.</p>
 
 <div class="signal-panel">
 <h4>Evaluation Signals</h4>
-<div class="signal"><span>Bias Sensitivity</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div></div>
-<div class="signal"><span>Tone Alignment</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div></div>
-<div class="signal"><span>Safety Awareness</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="signal"><span>Bias Sensitivity</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div></div>
+<div class="signal"><span>Tone Alignment</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div></div>
+<div class="signal"><span>Safety Awareness</span><div class="dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div></div>
 </div>
 
 <div class="flow">
-<div>Prompt<br><span>Input</span></div>
-<div>AI<br><span>Response</span></div>
-<div>Human<br><span>Evaluation</span></div>
+<div>Prompt</div><div>AI</div><div>Human Review</div><div>Improve</div>
 </div>
 
 <div class="bars">
-<div class="bar"><span>Clarity</span><div class="fill"></div></div>
-<div class="bar"><span>Fairness</span><div class="fill"></div></div>
-<div class="bar"><span>Empathy</span><div class="fill"></div></div>
+<div class="bar"><span>Clarity</span><div class="bar-fill" style="width:85%"></div></div>
+<div class="bar"><span>Bias</span><div class="bar-fill" style="width:75%"></div></div>
+<div class="bar"><span>Tone</span><div class="bar-fill" style="width:90%"></div></div>
 </div>
-
 </section>
 
 <section class="stack">
 
-<div class="card">
-<h3>About</h3>
-<p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real users.</p>
-</div>
+<div class="card"><h3>About</h3><p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p></div>
+
+<div class="card"><h3>Why Psychology in AI</h3><p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p></div>
 
 <div class="card">
-<h3>Why Psychology in AI</h3>
-<p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p>
-<ul class="chips">
-<li class="chip">Cognitive Bias</li>
-<li class="chip">Ethical Risk</li>
-<li class="chip">Human Judgment</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Applied Evaluation Practice</h3>
-<div class="timeline">
-<div class="timeline-item"><div class="timeline-dot"></div><div><strong>Bias Review</strong><br>Comparing outputs across roles.</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div><strong>Tone Calibration</strong><br>Checking emotional appropriateness.</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div><strong>Annotation</strong><br>Manual labeling for quality & safety.</div></div>
-</div>
+<h3>Creative Foundation</h3>
+<p>My visual background in photography sharpened my sensitivity to composition, perspective, and subtle bias — skills I now apply when evaluating AI responses.</p>
+<ul class="chips"><li class="chip">Visual Framing</li><li class="chip">Detail Sensitivity</li><li class="chip">Human Perception</li></ul>
 </div>
 
 <div class="card">
 <h3>Contact</h3>
-<p>Email: maschoi313@gmail.com<br>Timezone: GMT+7 (Indonesia)</p>
+<p>Email: maschoi313@gmail.com<br>Timezone: GMT+7</p>
 <div class="linkedin-box">
 <div class="badge-base LI-profile-badge"
 data-locale="en_US" data-size="medium" data-theme="light"
