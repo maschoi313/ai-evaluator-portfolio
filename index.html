@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Mas Choi | AI Trainer & Evaluator (Psychology-Informed)</title>
+<title>Mas Choi | AI Trainer & Evaluator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Psychology-informed AI Trainer & Evaluator focused on bias, tone, fairness, and human-centered evaluation." />
 
 <meta property="og:title" content="Mas Choi | AI Trainer & Evaluator" />
 <meta property="og:description" content="AI Trainer & Evaluator with a Psychology background." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="assets/logo-mas-choi.png" />
+<!-- Ganti dengan URL gambar jika sudah dihosting, misal: https://website-anda.com/assets/logo-mas-choi.png -->
+<meta property="og:image" content="assets/logo-mas-choi.png" /> 
 <link rel="icon" type="image/png" href="assets/logo-mas-choi.png">
 
 <style>
@@ -19,27 +20,42 @@
 --radius:16px;--shadow:0 18px 45px rgba(0,0,0,.65)
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
 font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
 background:radial-gradient(circle at top,#1b2440 0,#050714 55%);
 color:var(--text);line-height:1.65
 }
-.wrapper{max-width:1100px;margin:auto;padding:32px 20px 72px}
+.wrapper{max-width:1100px;margin:auto;padding:0 20px 72px}
+
+/* Navbar Baru */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;margin-bottom:20px}
+.logo-area{display:flex;align-items:center;gap:14px}
+.logo-area img{width:50px;height:50px;object-fit:contain}
+.logo-text{font-weight:700;font-size:18px;letter-spacing:.05em}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+@media(max-width:600px){.nav-links{display:none}} /* Hide nav links on very small screens */
+
+/* Header */
 header{display:flex;align-items:center;gap:14px;margin-bottom:40px}
-header img{width:140px}
-header span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header img{width:100px}
+header span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
 main{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
 @media(max-width:900px){main{grid-template-columns:1fr}}
 
+/* Hero Section */
 .hero{
 background:radial-gradient(circle at top left,#181f3a 0,#050714 56%);
 border-radius:28px;padding:32px;border:1px solid rgba(115,131,255,.25);
-box-shadow:var(--shadow)
+box-shadow:var(--shadow);margin-bottom:30px
 }
-.hero h1{font-size:clamp(30px,4vw,36px);margin-bottom:12px}
-.hero p{color:var(--muted);max-width:520px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4vw,38px);margin-bottom:12px;line-height:1.2}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:24px;font-size:15px}
 
+/* Signal Panel */
 .signal-panel{
 margin-top:18px;padding:20px;border-radius:18px;
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
@@ -49,7 +65,7 @@ border:1px solid var(--border)
 font-size:12px;letter-spacing:.18em;text-transform:uppercase;
 color:var(--muted);margin-bottom:14px
 }
-.signal{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px}
+.signal{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px;align-items:center}
 .dots{display:flex;gap:6px}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15)}
 .dot.active{
@@ -58,52 +74,91 @@ box-shadow:0 0 8px rgba(155,107,255,.6);animation:pulse 2s infinite alternate
 }
 @keyframes pulse{from{opacity:.4}to{opacity:1}}
 
+/* Flow & Bars */
 .flow{
 margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px
 }
 .flow div{
 padding:10px;border:1px solid var(--border);border-radius:12px;
-text-align:center;font-size:12px;color:var(--muted)
+text-align:center;font-size:11px;color:var(--muted);background:#0a0e1f
 }
 
 .bars{margin-top:20px}
-.bar{margin-bottom:10px}
-.bar span{font-size:12px}
+.bar{margin-bottom:12px}
+.bar-label{display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px;color:var(--muted)}
 .bar-fill{
 height:6px;background:linear-gradient(90deg,var(--primary),var(--accent));
-border-radius:999px;animation:grow 2s ease forwards
+border-radius:999px;animation:grow 1.5s ease forwards
 }
-@keyframes grow{from{width:0}to{width:80%}}
+@keyframes grow{from{width:0}to{width:var(--w)}}
 
+/* Stack / Sidebar */
 .stack{display:flex;flex-direction:column;gap:22px}
 .card{
 background:radial-gradient(circle at top left,#111425 0,#050714 62%);
-border-radius:var(--radius);border:1px solid var(--border);padding:20px
+border-radius:var(--radius);border:1px solid var(--border);padding:24px
 }
-.card h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.card p{font-size:14px;color:#e6e9ff}
-ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{font-size:11px;padding:5px 11px;border-radius:999px;border:1px solid rgba(103,121,255,.6);color:var(--muted)}
+.card h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px}
+.card p{font-size:14px;color:#e6e9ff;margin-bottom:10px}
 
-.linkedin-box{margin-top:14px;background:#fff;padding:10px;border-radius:12px}
-.footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
+/* Chips */
+ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:11px;padding:6px 12px;border-radius:999px;border:1px solid rgba(103,121,255,.4);color:var(--primary);background:rgba(77,240,255,0.05)}
+
+/* Contact */
+.contact-btn{
+display:inline-block;margin-top:10px;padding:10px 20px;
+background:var(--primary);color:#000;font-weight:bold;text-decoration:none;
+border-radius:8px;font-size:13px
+}
+.contact-btn:hover{background:#fff}
+.linkedin-box{margin-top:14px;background:#fff;padding:10px;border-radius:12px;min-height:60px}
+
+/* Projects Section (Baru Ditambahkan) */
+.projects-section{margin-top:40px}
+.section-title{font-size:24px;margin-bottom:20px;border-left:4px solid var(--accent);padding-left:12px}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.project-card{
+background:#0f1422;border:1px solid var(--border);border-radius:16px;padding:24px;
+transition:transform .3s
+}
+.project-card:hover{transform:translateY(-5px);border-color:var(--accent)}
+.project-card h4{color:var(--primary);margin-bottom:8px}
+.project-card p{font-size:13px;color:var(--muted);margin-bottom:12px}
+.project-tags{font-size:11px;color:#666}
+
+.footer{text-align:center;margin-top:60px;color:var(--muted);font-size:13px;opacity:0.6}
 </style>
 </head>
 
 <body>
 <div class="wrapper">
 
+<!-- Navigasi -->
+<nav>
+    <div class="logo-area">
+        <!-- Menggunakan gambar yang sama, tapi ukuran diubah di CSS -->
+        <img src="assets/logo-mas-choi.png" alt="Logo">
+        <span class="logo-text">Mas Choi</span>
+    </div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 <header>
-<img src="assets/logo-mas-choi.png" alt="Mas Choi Logo">
-<span>Mas Choi | AI Evaluator</span>
+<!-- Foto profil/logo disembunyikan di HP agar rapi, atau pindahkan ke nav -->
+<img src="assets/logo-mas-choi.png" alt="Mas Choi Logo" style="display:none"> 
+<span>AI Trainer & Evaluator</span>
 </header>
 
 <main>
 
-<section class="hero">
+<section class="hero" id="about">
 <h1>Contributing to fair, empathic, and human-centered AI evaluation.</h1>
-<p>Early-stage AI Trainer & Evaluator with a Psychology background,
-focused on bias detection, tone alignment, and post-response quality evaluation.</p>
+<p>Early-stage AI Trainer & Evaluator with a Psychology background, focused on bias detection, tone alignment, and post-response quality evaluation.</p>
 
 <div class="signal-panel">
 <h4>Evaluation Signals</h4>
@@ -117,41 +172,60 @@ focused on bias detection, tone alignment, and post-response quality evaluation.
 </div>
 
 <div class="bars">
-<div class="bar"><span>Clarity</span><div class="bar-fill" style="width:85%"></div></div>
-<div class="bar"><span>Bias</span><div class="bar-fill" style="width:75%"></div></div>
-<div class="bar"><span>Tone</span><div class="bar-fill" style="width:90%"></div></div>
+<div class="bar"><div class="bar-label"><span>Clarity</span><span>85%</span></div><div class="bar-fill" style="--w:85%"></div></div>
+<div class="bar"><div class="bar-label"><span>Bias Detection</span><span>75%</span></div><div class="bar-fill" style="--w:75%"></div></div>
+<div class="bar"><div class="bar-label"><span>Tone Matching</span><span>90%</span></div><div class="bar-fill" style="--w:90%"></div></div>
 </div>
 </section>
 
-<section class="stack">
+<section class="stack" id="contact">
 
-<div class="card"><h3>About</h3><p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p></div>
+<div class="card">
+<h3>About Me</h3>
+<p>I evaluate AI responses through a psychology-informed lens—focusing on how language, tone, and bias affect real human users.</p>
+</div>
 
-<div class="card"><h3>Why Psychology in AI</h3><p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p></div>
+<div class="card">
+<h3>Why Psychology in AI</h3>
+<p>My background enables me to identify cognitive bias, ethical risk, and emotional mismatch in AI outputs.</p>
+</div>
 
 <div class="card">
 <h3>Creative Foundation</h3>
-<p>My visual background in photography sharpened my sensitivity to composition, perspective, and subtle bias — skills I now apply when evaluating AI responses.</p>
-<ul class="chips"><li class="chip">Visual Framing</li><li class="chip">Detail Sensitivity</li><li class="chip">Human Perception</li></ul>
+<p>My visual background in photography sharpened my sensitivity to composition, perspective, and subtle bias.</p>
+<ul class="chips">
+<li class="chip">Visual Framing</li>
+<li class="chip">Detail Sensitivity</li>
+<li class="chip">Human Perception</li>
+</ul>
 </div>
 
 <div class="card">
 <h3>Contact</h3>
 <p>Email: maschoi313@gmail.com<br>Timezone: GMT+7</p>
-<div class="linkedin-box">
-<div class="badge-base LI-profile-badge"
-data-locale="en_US" data-size="medium" data-theme="light"
-data-type="HORIZONTAL" data-vanity="muhammad-nur-choiri-5b6626229"
-data-version="v1"></div>
+
+<!-- Tombol Email -->
+<a href="mailto:maschoi313@gmail.com" class="contact-btn">Email Me</a>
+
+<!-- LinkedIn Badge (Ditambahkan wrapper agar rapi) -->
+<div class="linkedin-box" style="margin-top:15px;">
+    <div class="badge-base LI-profile-badge"
+    data-locale="en_US" data-size="medium" data-theme="light"
+    data-type="HORIZONTAL" data-vanity="muhammad-nur-choiri-5b6626229"
+    data-version="v1"></div>
 </div>
+<!-- Fallback Link jika badge tidak muncul -->
+<p style="margin-top:8px; font-size:11px;"><a href="https://www.linkedin.com/in/muhammad-nur-choiri-5b6626229/" target="_blank" style="color:var(--primary)">View LinkedIn Profile &rarr;</a></p>
 </div>
 
 </section>
 </main>
 
-<div class="footer">© 2025 Mas Choi · AI Trainer & Evaluator</div>
-</div>
-
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-</body>
-</html>
+<!-- Bagian Projects (Baru Ditambahkan) -->
+<section class="projects-section" id="projects">
+    <h2 class="section-title">Selected Evaluations</h2>
+    <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h4>Bias Detection in Chatbot X</h4>
+            <p>Evaluated 500+ response turnarounds to identify gender and cultural bias in customer service scenarios.</p
